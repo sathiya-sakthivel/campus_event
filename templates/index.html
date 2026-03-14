@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Campus Events</title>
+</head>
+
+<body>
+
+<h1>Campus Event Management</h1>
+
+<a href="/create_event">Create Event</a>
+
+<h2>Available Events</h2>
+
+<table border="1">
+<tr>
+<th>Event</th>
+<th>Date</th>
+<th>Venue</th>
+<th>Register</th>
+</tr>
+
+{% for event in events %}
+<tr>
+<td>{{event[1]}}</td>
+<td>{{event[2]}}</td>
+<td>{{event[3]}}</td>
+<td>
+<a href="/register/{{event[1]}}">Register</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
